@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.CmosDemoDao">
+
+
+    <insert id="insertCmosDemo" parameterType="com.example.demo.dao.entity.CmosDemoEntity">
+    insert into cmosdemo (id , name , `type` , typecode , address , location , cityname , pname , adname ,shopinfo)
+    values (#{id} , #{name} ,#{type} , #{typeCode} , #{address} , #{location} ,#{cityname} , #{pname} ,#{adname} , #{shopinfo})
+
+    </insert>
+
+    <select id="findcity" resultType="map">
+        select text from t_citys where length(id) = 9 limit 2994, 1000
+    </select>
+</mapper>
